@@ -33,14 +33,13 @@ class CalendarsController < ApplicationController
       today_plans = []
       plans.each do |plan|
         today_plans.push(plan.plan) if plan.date == @todays_date + x
-      end
 
       wday_num = wdays_index
 if wdays_num >= 7
   wday_num = wday_num -7
 end
 
-      days = { month:  (@todays_date + x).month, date: (@todays_date+x).day, plans: today_plans,wday: [wdays_index]}
+      days = { month:  (@todays_date + x).month, date: (@todays_date+x).day, plans: today_plans,wday: [wdays_index]
       @week_days.push(days)
     end
 
